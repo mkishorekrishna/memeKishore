@@ -49,18 +49,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6N-oY-DvG">
+                                <rect key="frame" x="147" y="116" width="120" height="30"/>
+                                <state key="normal" title="Share this Meme!"/>
+                                <connections>
+                                    <action selector="shareMeme:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9s2-WE-Q5U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="DJJ-3E-Tq3" firstAttribute="centerX" secondItem="CdD-z4-IBk" secondAttribute="centerX" id="1rx-Z1-6e5"/>
                             <constraint firstItem="mqK-FX-J1P" firstAttribute="centerX" secondItem="CdD-z4-IBk" secondAttribute="centerX" id="9aX-9x-rUR"/>
                             <constraint firstItem="CdD-z4-IBk" firstAttribute="top" secondItem="mqK-FX-J1P" secondAttribute="bottom" constant="10" id="AA4-Qu-XSz"/>
+                            <constraint firstItem="W6N-oY-DvG" firstAttribute="centerX" secondItem="mqK-FX-J1P" secondAttribute="centerX" id="Kbp-CK-sBJ"/>
                             <constraint firstItem="DJJ-3E-Tq3" firstAttribute="top" secondItem="CdD-z4-IBk" secondAttribute="bottom" constant="10" id="OjP-MK-83f"/>
                             <constraint firstItem="4SW-G5-Igo" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="PFs-aS-8RQ"/>
                             <constraint firstItem="4SW-G5-Igo" firstAttribute="leading" secondItem="CdD-z4-IBk" secondAttribute="leading" id="ePo-R9-Bvj"/>
                             <constraint firstItem="4SW-G5-Igo" firstAttribute="trailing" secondItem="CdD-z4-IBk" secondAttribute="trailing" id="hNC-TZ-SA6"/>
                             <constraint firstItem="CdD-z4-IBk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uHY-je-7Oy"/>
                             <constraint firstItem="CdD-z4-IBk" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vfG-Q0-p3U"/>
+                            <constraint firstItem="mqK-FX-J1P" firstAttribute="top" secondItem="W6N-oY-DvG" secondAttribute="bottom" constant="108" id="zGM-xE-Fuu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -68,6 +77,8 @@
                         <outlet property="bottomTextField" destination="DJJ-3E-Tq3" id="nYw-S3-mEo"/>
                         <outlet property="imageFromCamera" destination="gaK-qI-Mb0" id="Ip9-ng-rDX"/>
                         <outlet property="imagePicker" destination="CdD-z4-IBk" id="v1H-Ic-f8G"/>
+                        <outlet property="shareMemeButton" destination="W6N-oY-DvG" id="47k-ja-c3Y"/>
+                        <outlet property="toolBar" destination="4SW-G5-Igo" id="YQY-u4-7ul"/>
                         <outlet property="topTextField" destination="mqK-FX-J1P" id="ev1-Ut-sXZ"/>
                     </connections>
                 </viewController>

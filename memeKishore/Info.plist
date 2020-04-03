@@ -3,7 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This is a meme app uses photo lib </string>
+	<string>bkgkhgj</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>bgj</string>
 	<key>NSCameraUsageDescription</key>
 	<string>This is meme app</string>
 	<key>CFBundleDevelopmentRegion</key>

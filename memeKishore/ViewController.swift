@@ -10,10 +10,14 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    
     @IBOutlet weak var imagePicker: UIImageView!
     @IBOutlet weak var imageFromCamera: UIBarButtonItem!
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
+    @IBOutlet weak var toolBar: UIToolbar!
+    @IBOutlet weak var shareMemeButton: UIButton!
+    
     
     //assign Delegates
     
@@ -51,6 +55,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NSAttributedString.Key.font: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
         NSAttributedString.Key.strokeWidth: -2.0
     ]
+    
+    @IBAction func shareMeme(_ sender: Any) {
+        let image = generatedMemeAndText()
+        let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(share, animated: true, completion: nil)
+    }
+    
     
     
     @IBAction func pickImage(_ sender: Any) {
@@ -111,6 +122,35 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         print("subscribeToHideKeyboardNotification()")
     }
+    
+    func save() {
+        let memedImage = generatedMemeAndText()
+        let meme = Meme(toptextF1: topTextField.text!, bottomtextF2: bottomTextField.text!, image: imagePicker.image!  , finalmeme: memedImage )
+    }
+    
+    
+    func generatedMemeAndText() -> UIImage {
+        // this is to hide the toolbar while generating memed Image
+        _ = disablerequired(hidden: true)
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        let memedImage :  UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        // Enable the toolbar unless the
+        disablerequired(hidden: false)
+        return memedImage
+    }
+    
+    func disablerequired(hidden: Bool) {
+        toolBar.isHidden = hidden
+        shareMemeButton.isHidden = hidden
+    }
 
+}
+struct Meme {
+    var toptextF1 : String
+    var bottomtextF2 : String
+    var image : UIImage
+    var finalmeme : UIImage
 }
 

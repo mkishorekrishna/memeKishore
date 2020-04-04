@@ -58,7 +58,7 @@
 		0B93006D243204E500DA0E5F /* memeKishore */ = {
 			isa = PBXGroup;
 			children = (
-				0BD668E22434670000669919 /* DelegatesTextFields */,
+				0BD668E22434670000669919 /* Delegates */,
 				0B93006E243204E500DA0E5F /* AppDelegate.swift */,
 				0B930070243204E500DA0E5F /* SceneDelegate.swift */,
 				0B930072243204E500DA0E5F /* MemeViewController.swift */,
@@ -70,12 +70,12 @@
 			path = memeKishore;
 			sourceTree = "<group>";
 		};
-		0BD668E22434670000669919 /* DelegatesTextFields */ = {
+		0BD668E22434670000669919 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
 				0BD668E32434672B00669919 /* TopandBottomText.swift */,
 			);
-			path = DelegatesTextFields;
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

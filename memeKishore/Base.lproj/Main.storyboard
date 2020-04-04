@@ -32,7 +32,7 @@
                                             <action selector="pickImage:" destination="BYZ-38-t0r" id="kpw-Z6-xbi"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem title="Camera" image="camera" catalog="system" landscapeImage="MemeGenerator_120 copy" width="391" id="gaK-qI-Mb0">
+                                    <barButtonItem title="Camera" image="camera" catalog="system" width="391" id="gaK-qI-Mb0">
                                         <connections>
                                             <action selector="pickImagefromCamera:" destination="BYZ-38-t0r" id="Fcf-FC-PDu"/>
                                         </connections>
@@ -90,7 +90,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="MemeGenerator_120 copy" width="120" height="120"/>
         <image name="camera" catalog="system" width="64" height="48"/>
         <image name="photo" catalog="system" width="64" height="46"/>
     </resources>

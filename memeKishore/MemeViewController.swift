@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MemeViewController.swift
 //  memeKishore
 //
 //  Created by Kishore Krishna M on 30/03/20.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     
     @IBOutlet weak var imagePicker: UIImageView!
@@ -39,6 +39,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.subscribeToKeyboardHideNotification()
         
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

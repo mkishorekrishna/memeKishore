@@ -18,9 +18,6 @@ class TopandBottomText : NSObject, UITextFieldDelegate {
         NSAttributedString.Key.strokeWidth: -2.0
     ]
     
-    // This is to make the current editing field as Active Field
-    var activeField : UITextField?
-
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
@@ -31,20 +28,18 @@ class TopandBottomText : NSObject, UITextFieldDelegate {
             textField.text = ""
             print("Clearing the default text")
         }
-        activeField = textField
-        print("\(String(describing: activeField)) started editing")
     }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
-        activeField = nil
         print("\(textField) ends editing")
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var newText = textField.text! as NSString
-            newText = newText.replacingCharacters(in: range, with: string) as NSString
+        newText = newText.replacingCharacters(in: range, with: string) as NSString
         return true
     }
-     
+    
     func applyTextStyles(for field: UITextField, Initialtext: String) {
         field.textAlignment = .center
         field.defaultTextAttributes = memeTextAttributes
@@ -55,7 +50,4 @@ class TopandBottomText : NSObject, UITextFieldDelegate {
         field.text = Initialtext
         print("Required Text styles are applied for \(String(describing: field.text))")
     }
-    
-    
-    
 }

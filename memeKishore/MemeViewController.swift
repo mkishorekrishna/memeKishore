@@ -17,7 +17,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var toolBar: UIToolbar!
     @IBOutlet weak var shareMemeButton: UIBarButtonItem!
-
+    
     @IBOutlet weak var shareToolBar: UIToolbar!
     
     //Assign Delegates
@@ -44,8 +44,8 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // subscribe to Keyboard Notifications in order to know when keyboard is shown and hidden
-           subscribeToKeyboardNotification()
-         print("View will appear  executed")
+        subscribeToKeyboardNotification()
+        print("View will appear  executed")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,7 +59,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let share = UIActivityViewController(activityItems: [image], applicationActivities: nil)
         present(share, animated: true, completion: nil)
         print("User tapped on Share Button")
-        
         share.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, complete: Bool, returnedItems: [Any]?, error: Error?) in
             if !complete {
                 return
@@ -67,8 +66,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             self.save(memedImage: image)
             self.dismiss(animated: true, completion: nil)
         }
-        
-        
     }
     
     @IBAction func selectImageForMemeFrom(_sender: UIBarButtonItem){
@@ -89,7 +86,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-               imagePicker.contentMode = .scaleAspectFit
+            imagePicker.contentMode = .scaleAspectFit
             imagePicker.image = image
         }
         dismiss(animated: true, completion: nil)
@@ -98,7 +95,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func save(memedImage: UIImage) {
-      let meme = MemeModel(toptextF1: topTextField.text!, bottomtextF2: bottomTextField.text!, image: imagePicker.image!  , finalmeme: memedImage )
+        let meme = MemeModel(toptextF1: topTextField.text!, bottomtextF2: bottomTextField.text!, image: imagePicker.image!  , finalmeme: memedImage )
     }
     
     func generatedMemeAndText() -> UIImage {
@@ -119,7 +116,7 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         shareToolBar.isHidden = hiddenToolBar
         print("Tool bar's are disabled")
     }
-
+    
     func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
         let userInfo = notification.userInfo
         let keyboardSize = userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
@@ -137,14 +134,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
         print("unsubscribeFromKeyboardNotifications")
     }
-
+    
     @objc func keyboardWillShow(_ notification: NSNotification){
         if bottomTextField.isFirstResponder {
-             view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y -= getKeyboardHeight(notification)
         }
     }
-    
-    
     
     @objc func keyboardWillHide(_ notification: NSNotification) {
         view.frame.origin.y = 0

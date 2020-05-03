@@ -10,6 +10,14 @@ import UIKit
 
 class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var  memes: [MemeModel]! {
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        return appDelegate.memes
+    }
+    
+    
+    
     // Define outlets
     @IBOutlet weak var imagePicker: UIImageView!
     @IBOutlet weak var imageFromCamera: UIBarButtonItem!
@@ -95,7 +103,12 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     func save(memedImage: UIImage) {
-        let meme = MemeModel(toptextF1: topTextField.text!, bottomtextF2: bottomTextField.text!, image: imagePicker.image!  , finalmeme: memedImage )
+        let meme  = MemeModel(toptextF1: topTextField.text!, bottomtextF2: bottomTextField.text!, image: imagePicker.image!  , finalmeme: memedImage )
+        //add this to meme array on the application delegate
+        //The app delegate is effectively the root object of your app, and it works in conjunction with UIApplication to manage some interactions with the system. Like the UIApplication object, UIKit creates your app delegate object early in your app’s launch cycle so it is always present.
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generatedMemeAndText() -> UIImage {

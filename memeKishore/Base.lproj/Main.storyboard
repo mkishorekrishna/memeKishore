@@ -124,7 +124,7 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="Ueu-us-HXE" id="xQa-EB-NhT"/>
+                            <outlet property="dataSource" destination="Ueu-us-HXE" id="khV-ax-cK5"/>
                             <outlet property="delegate" destination="Ueu-us-HXE" id="qa7-b2-vXf"/>
                         </connections>
                     </tableView>

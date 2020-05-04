@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class MemeCollectionViewController : UIViewController , UICollectionViewDelegate , UICollectionViewDataSource {
+class MemeCollectionViewController : UICollectionViewController {
     
     var memes : [MemeModel]! {
         let object = UIApplication.shared.delegate
@@ -18,11 +18,11 @@ class MemeCollectionViewController : UIViewController , UICollectionViewDelegate
     }
     
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return  memes.count
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecollectioncell", for: indexPath)
         let dataRow = memes[(indexPath as NSIndexPath).row]
         cell.accessibilityLabel = "collectioncelllabel"

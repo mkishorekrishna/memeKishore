@@ -23,16 +23,16 @@ class MemeTableViewController : UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusablecell", for: indexPath)
         let dataRow = memes[(indexPath as NSIndexPath).row]
-        cell.textLabel!.text = "Meme1"
-        cell.imageView?.image = UIImage(named: "")
+        cell.textLabel!.text = dataRow.toptextF1 + dataRow.bottomtextF2
+        cell.imageView?.image = dataRow.finalmeme
         return cell
-        
-        
         
     }
     
-
-    
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailController = storyboard?.instantiateViewController(withIdentifier: "MemebTableViewCell") as! MemeTableViewController
+        detailController.memes?[(indexPath as NSIndexPath).row]
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
     
 }

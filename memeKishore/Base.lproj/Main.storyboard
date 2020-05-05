@@ -76,7 +76,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="reusablecollectioncell" id="3Vn-kf-59z">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="reusablecollectioncell" reuseIdentifier="reusablecollectioncell" id="3Vn-kf-59z">
                                 <rect key="frame" x="0.0" y="0.0" width="149" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AG7-OJ-IJd">
@@ -263,6 +263,6 @@
         <image name="square.grid.3x2" catalog="system" width="64" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dwN-X2-7fo"/>
+        <segue reference="iOb-he-tRG"/>
     </inferredMetricsTieBreakers>
 </document>

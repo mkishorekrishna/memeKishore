@@ -17,6 +17,9 @@ class MemeCollectionViewController : UICollectionViewController {
         return appdelegate.memes
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView!.reloadData()
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return  memes.count

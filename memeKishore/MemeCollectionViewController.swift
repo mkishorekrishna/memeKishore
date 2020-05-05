@@ -11,6 +11,7 @@ import UIKit
 
 class MemeCollectionViewController : UICollectionViewController {
     
+    
     var memes : [MemeModel]! {
         let object = UIApplication.shared.delegate
         let appdelegate = object as! AppDelegate
@@ -27,15 +28,15 @@ class MemeCollectionViewController : UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecollectioncell", for: indexPath)
-        let dataRow = memes[(indexPath as NSIndexPath).row]
-        cell.accessibilityLabel = "collectioncelllabel"
+        _ = memes[(indexPath as NSIndexPath).row]
         return cell
-        
-        
     }
     
-
-    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailController = storyboard?.instantiateViewController(identifier: "memedetailview") as! MemeDetailCellVC
+        _ = detailController.memes?[(indexPath as NSIndexPath).row]
+        self.navigationController?.pushViewController(detailController, animated: true)
+    }
     
 }
 

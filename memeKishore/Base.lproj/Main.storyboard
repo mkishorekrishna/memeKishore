@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XFb-ZN-GsW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XFb-ZN-GsW">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--TableView-->
+        <!--CollectionView-->
         <scene sceneID="xXS-MD-VyA">
             <objects>
                 <navigationController id="g59-3n-Jh0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="TableView" image="rectangle.grid.1x2" catalog="system" id="1hK-yl-XM5"/>
+                    <tabBarItem key="tabBarItem" title="CollectionView" image="rectangle.grid.3x2" catalog="system" id="1hK-yl-XM5"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kyy-7G-gZM">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -44,11 +44,11 @@
             </objects>
             <point key="canvasLocation" x="-4964" y="-1637"/>
         </scene>
-        <!--Collection-->
+        <!--TableView-->
         <scene sceneID="RIa-Hd-nnY">
             <objects>
                 <navigationController id="Dkd-gV-H3Y" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Collection" image="square.grid.3x2" catalog="system" id="rJH-zg-lwb"/>
+                    <tabBarItem key="tabBarItem" title="TableView" image="rectangle.grid.1x2" catalog="system" id="rJH-zg-lwb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fpf-IU-mNw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -76,7 +76,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="reusablecollectioncell" reuseIdentifier="reusablecollectioncell" id="3Vn-kf-59z">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="reusablecollectioncell" reuseIdentifier="reusablecollectioncell" id="3Vn-kf-59z" customClass="MemeCollectionViewCell" customModule="memeKishore" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="149" height="124"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AG7-OJ-IJd">
@@ -84,7 +84,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xku-FS-Jx0">
-                                            <rect key="frame" x="0.0" y="0.0" width="171" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="141" height="116"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
@@ -122,24 +122,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemebTableViewCell" textLabel="i6E-Ls-vs3" detailTextLabel="8OO-xL-v46" style="IBUITableViewCellStyleSubtitle" id="o8a-61-4YI">
-                                <rect key="frame" x="0.0" y="28" width="414" height="55.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reusablecell" textLabel="i6E-Ls-vs3" style="IBUITableViewCellStyleDefault" id="o8a-61-4YI">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o8a-61-4YI" id="LcQ-jI-6qi">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i6E-Ls-vs3">
-                                            <rect key="frame" x="20.000000000000004" y="8.9999999999999982" width="33.333333333333336" height="20.333333333333332"/>
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8OO-xL-v46">
-                                            <rect key="frame" x="19.999999999999996" y="31.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -252,17 +245,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1849" y="-1945"/>
+            <point key="canvasLocation" x="-2088" y="-1576"/>
+        </scene>
+        <!--MemeDetailCell-->
+        <scene sceneID="ULo-vz-Emx">
+            <objects>
+                <viewController storyboardIdentifier="memedetailview" title="MemeDetailCellVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I3B-cg-zyL" userLabel="MemeDetailCell" customClass="MemeDetailCellVC" customModule="memeKishore" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="enk-HN-oXv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SrS-Jd-CCu">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="mpG-5V-hKW" firstAttribute="trailing" secondItem="SrS-Jd-CCu" secondAttribute="trailing" id="32O-X5-WlY"/>
+                            <constraint firstItem="SrS-Jd-CCu" firstAttribute="top" secondItem="mpG-5V-hKW" secondAttribute="top" id="PIk-LO-1xA"/>
+                            <constraint firstItem="mpG-5V-hKW" firstAttribute="bottom" secondItem="SrS-Jd-CCu" secondAttribute="bottom" id="fTi-oo-R20"/>
+                            <constraint firstItem="SrS-Jd-CCu" firstAttribute="leading" secondItem="mpG-5V-hKW" secondAttribute="leading" id="y2V-Mr-1p2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mpG-5V-hKW"/>
+                    </view>
+                    <connections>
+                        <outlet property="memeDetailedImage" destination="SrS-Jd-CCu" id="V0W-mT-U3b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Urx-Xp-vAC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1146" y="-1576"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="camera.fill" catalog="system" width="64" height="48"/>
-        <image name="photo.fill" catalog="system" width="64" height="46"/>
-        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="64" height="48"/>
-        <image name="rectangle.grid.1x2" catalog="system" width="64" height="50"/>
-        <image name="square.grid.3x2" catalog="system" width="64" height="40"/>
-    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="iOb-he-tRG"/>
+        <segue reference="dwN-X2-7fo"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="camera.fill" catalog="system" width="128" height="96"/>
+        <image name="photo.fill" catalog="system" width="128" height="93"/>
+        <image name="plus.rectangle.fill.on.rectangle.fill" catalog="system" width="128" height="98"/>
+        <image name="rectangle.grid.1x2" catalog="system" width="128" height="101"/>
+        <image name="rectangle.grid.3x2" catalog="system" width="128" height="101"/>
+    </resources>
 </document>

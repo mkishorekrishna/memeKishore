@@ -29,16 +29,17 @@ class MemeTableViewController : UITableViewController {
         let dataRow = memes[(indexPath as NSIndexPath).row]
         cell.textLabel!.text = dataRow.toptextF1 + dataRow.bottomtextF2
         cell.imageView?.image = dataRow.finalmeme
+
         return cell
         
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailController = storyboard?.instantiateViewController(withIdentifier: "MemebTableViewCell") as! MemeTableViewController
+        let detailController = storyboard?.instantiateViewController(withIdentifier: "memedetailview") as!
+        MemeDetailCellVC
         detailController.memes?[(indexPath as NSIndexPath).row]
         self.navigationController?.pushViewController(detailController, animated: true)
     }
-    
     
     
     

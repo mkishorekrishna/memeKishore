@@ -16,8 +16,6 @@ class MemeViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         return appDelegate.memes
     }
     
-    
-    
     // Define outlets
     @IBOutlet weak var imagePicker: UIImageView!
     @IBOutlet weak var imageFromCamera: UIBarButtonItem!

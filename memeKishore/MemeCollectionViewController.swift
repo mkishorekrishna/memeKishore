@@ -27,15 +27,17 @@ class MemeCollectionViewController : UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecollectioncell", for: indexPath)
-        _ = memes[(indexPath as NSIndexPath).row]
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reusablecollectioncell", for: indexPath) as! MemeCollectionViewCell
+        
+        cell.collectioncellImage.image = memes[indexPath.item].finalmeme
         return cell
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailController = storyboard?.instantiateViewController(identifier: "memedetailview") as! MemeDetailCellVC
-        _ = detailController.memes?[(indexPath as NSIndexPath).row]
+        let detailController = self.storyboard?.instantiateViewController(identifier: "memedetailview") as! MemeDetailVC
+        detailController.memes = memes[indexPath.row]
         self.navigationController?.pushViewController(detailController, animated: true)
+        
     }
     
 }

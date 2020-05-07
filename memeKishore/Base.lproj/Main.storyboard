@@ -111,7 +111,6 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="OB1-yP-cSj">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="Bba-ab-pCJ"/>
                         <barButtonItem key="rightBarButtonItem" title="Add" image="plus.rectangle.fill.on.rectangle.fill" catalog="system" id="C8o-EN-MQg">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="dwN-X2-7fo"/>
@@ -160,7 +159,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="1na-Dg-tXL">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="mjB-Rn-cdo"/>
                         <barButtonItem key="rightBarButtonItem" title="Add" image="plus.rectangle.fill.on.rectangle.fill" catalog="system" id="vKG-M3-ngq">
                             <connections>
                                 <segue destination="BYZ-38-t0r" kind="presentation" id="iOb-he-tRG"/>
@@ -292,7 +290,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iOb-he-tRG"/>
+        <segue reference="dwN-X2-7fo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="96"/>
